@@ -20,26 +20,22 @@ public class BasicNavigation {
         // get th title of page
         String currentTitle = driver.getTitle();
         System.out.println("currentTitle = " + currentTitle);
+        String currentURL = driver.getCurrentUrl();
+        System.out.println("currentURL = " + currentURL);
 
 
-        // Stop code execution for 2 seconds
-        Thread.sleep(2000);
 
 
+        // Stop code execution for 1 seconds
+        Thread.sleep(1000);
         // 4- use selenium navigate back
         driver.navigate().back();
-
-
-        // Stop code execution for 2 seconds
-        Thread.sleep(2000);
-
-        
+        // Stop code execution for 1 seconds
+        Thread.sleep(1000);
         // 5- use selenium navigate forward
         driver.navigate().forward();
-
-
-        // Stop code execution for 2 seconds
-        Thread.sleep(2000);
+        // Stop code execution for 1 seconds
+        Thread.sleep(1000);
 
 
         // use selenium to navigate refresh
@@ -52,14 +48,19 @@ public class BasicNavigation {
         // get the current title after getting the Google page
         currentTitle = driver.getTitle();
 
+
         // get th title of page
         //System.out.println("driver.getTitle()= " + driver.getTitle());
-
-
         System.out.println("currentTitle = " + currentTitle);
 
+
         // Get the current URL using Selenium
-       String CurrentUrl = driver.getCurrentUrl();
+        currentURL = driver.getCurrentUrl();
+        System.out.println("currentURL = " + currentURL);
+
+
+
+
 
 
     }
