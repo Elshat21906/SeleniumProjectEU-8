@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -65,11 +66,34 @@ public class DropdownPractices {
         Select dayDropdown = new Select(driver.findElement(By.xpath("//select[@id='day']")));
 
         // Select year using : visible text
+        yearDropdown.selectByVisibleText("1923");
+
         // Select month using : value attribute
+        monthDropdown.selectByValue("11");
+
         // Select day using : index number
+        dayDropdown.selectByIndex(0);
+
+        // Create expecting values
+        String expectedYear = "1923";
+        String expectedMonth = "December";
+        String expectedDay = "1";
+
+        //Getting actual values from browser
+        String actualYear = yearDropdown.getFirstSelectedOption().getText();
+        String actualMonth = monthDropdown.getFirstSelectedOption().getText();
+        String actualDay = dayDropdown.getFirstSelectedOption().getText();
+
+        //Create assertions
+        Assert.assertTrue(actualYear.equals(expectedYear));
+        Assert.assertEquals(actualMonth,expectedMonth);
+        Assert.assertEquals(actualDay,expectedDay);
 
     }
-
+    @AfterMethod
+    public void tearDown(){
+        driver.close();
+    }
 }
 /*
 TC #5: Selecting state from State dropdown and verifying result 1. Open Chrome browser
