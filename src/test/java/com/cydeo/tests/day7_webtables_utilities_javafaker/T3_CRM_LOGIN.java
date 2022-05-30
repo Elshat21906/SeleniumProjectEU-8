@@ -1,6 +1,7 @@
 package com.cydeo.tests.day7_webtables_utilities_javafaker;
 
 import com.cydeo.utilities.BrowserUtils;
+import com.cydeo.utilities.CRM_Utilities;
 import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -46,6 +47,31 @@ public class T3_CRM_LOGIN {
        // 6. Verify title is as expected:
        // Expected: Portal
         BrowserUtils.verifyTitle(driver,"Portal");
+    }
+
+    @Test
+    public void crm_login_test_2(){
+        // 2. Goto:http://login1.nextbasecrm.com/
+        driver.get("https://login1.nextbasecrm.com/");
+
+        //Calling my utility method to login helpdesk1
+        CRM_Utilities.crm_login(driver);
+
+        // 6. Verify title is as expected:
+        // Expected: Portal
+        BrowserUtils.verifyTitle(driver,"Portal");
+    }
+
+    public void crm_login_test_3(){
+        // 2. Goto:http://login1.nextbasecrm.com/
+        driver.get("https://login1.nextbasecrm.com/");
+
+        //Calling my utility method to login helpdesk1
+        CRM_Utilities.crm_login(driver,"helpdesk2@cybertekschool.com","UserUser");
+
+        // 6. Verify title is as expected:
+        // Expected: Portal
+        BrowserUtils.verifyTitle(driver,"(2)Portal");
     }
 }
 /*
