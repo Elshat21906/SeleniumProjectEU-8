@@ -3,6 +3,7 @@ package com.cydeo.tests.day7_webtables_utilities_javafaker;
 import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -37,11 +38,17 @@ public class T1_WindowHandling {
 
         for (String each: allWindowsHandles) {
             driver.switchTo().window(each);
+            System.out.println("Current URL: " + driver.getCurrentUrl());
+
+            if(driver.getCurrentUrl().contains("etsy")){
+                break;
+            }
         }
-
         //5. Assert:Title contains“Etsy”
+        String actualTitle = driver.getTitle();
+        String expectedInTitle = "Etsy";
 
-        //Lines to be pasted:
+        Assert.assertTrue(actualTitle.contains(expectedInTitle));
 
 
     }
