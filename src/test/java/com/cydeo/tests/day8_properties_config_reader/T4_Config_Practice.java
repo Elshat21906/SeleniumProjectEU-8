@@ -21,6 +21,8 @@ public class T4_Config_Practice {
 
         // We are getting the browserType dynamically from our configuration.properties file
         String browserType = ConfigurationReader.getProperty("browser");
+        driver = WebDriverFactory.getDriver(browserType);
+        //String URL = ConfigurationReader.getProperty();
 
         driver = WebDriverFactory.getDriver(browserType);
         driver.manage().window().maximize();
