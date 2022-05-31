@@ -23,6 +23,12 @@ public class ReadingProperties {
 
         // 4:Use "properties" object to read value
         System.out.println("properties.getProperty(\"browser\") = " + properties.getProperty("browser"));
+        System.out.println("properties.getProperty(\"env\") = " + properties.getProperty("env"));
+        System.out.println("properties.getProperty(\"username\") = " + properties.getProperty("username"));
 
     }
 }
+// 1:Create the object of Properties
+// 2:We need to open the file in java memory: FileInputStream
+// 3:Load the properties object using FileInputStream
+// 4:Use "properties" object to read value
