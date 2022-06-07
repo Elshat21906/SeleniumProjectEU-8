@@ -7,9 +7,9 @@ public class T1_Registration_Forum {
     @Test
     public void registration_form_test() {
         //1. Open browser
-
         //2. Go to website:https://practice.cydeo.com/registration_form
         //Driver.getDriver() --> driver
+
 
         //Create JavaFaker object
 
