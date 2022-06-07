@@ -1,5 +1,10 @@
 package com.cydeo.tests.day10_upload_actions_jsexecutor;
 
+import com.cydeo.utilities.ConfigurationReader;
+import com.cydeo.utilities.Driver;
+import com.github.javafaker.Faker;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
 public class T1_Registration_Forum {
@@ -9,16 +14,38 @@ public class T1_Registration_Forum {
         //1. Open browser
         //2. Go to website:https://practice.cydeo.com/registration_form
         //Driver.getDriver() --> driver
+        Driver.getDriver().get(ConfigurationReader.getProperty("registration.form.url"));
 
 
         //Create JavaFaker object
+        Faker faker = new Faker();
 
         //3. Enter first name
+        WebElement inputFirstname = Driver.getDriver().findElement(By.xpath("//input[@name='firstname']"));
+        inputFirstname.sendKeys(faker.name().firstName());
+
         //4. Enter last name
+        WebElement inputLastname = Driver.getDriver().findElement(By.xpath("//input[@name='lastname']"));
+        inputLastname.sendKeys(faker.name().lastName());
+
         //5. Enter username
+        //inputUsername.sendKeys(faker.name().username().replaceAll(".",""));
+        WebElement inputUsername = Driver.getDriver().findElement(By.xpath("//input[@name='username']"));
+        String user = faker.bothify("helpdesk###");
+        inputUsername.sendKeys(user);
+
         //6. Enter email address
+        WebElement enterEmail = Driver.getDriver().findElement(By.xpath("//input[@name='email']"));
+        enterEmail.sendKeys(user + "@email.com");
+
         //7. Enter password
+        WebElement enterPassword = Driver.getDriver().findElement(By.xpath("//input[@name='password']"));
+        enterPassword.sendKeys(faker.numerify("########"));
+
         //8. Enter phone number
+        WebElement enterPhoneNumber = Driver.getDriver().findElement(By.xpath("//input[@name='phone']"));
+        enterPhoneNumber.sendKeys(faker.numerify("###-###-####)"));
+
         //9. Select a gender from radio buttons
         //10.Enter date of birth
         //11.Select Department/Office
