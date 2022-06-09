@@ -37,13 +37,23 @@ public class T3_Actions_Hover {
         //3. Assert:
         //a. “name: user1” is displayed
         Assert.assertTrue(user1.isDisplayed());
+
         //4. Hover over to second image
+        actions.moveToElement(img2).perform();
+        Assert.assertTrue(user2.isDisplayed());
 
         //5. Assert:
         //a. “name: user2” is displayed
+        Assert.assertTrue(user2.isDisplayed());
+
+        //6. Hover over to third image
+        actions.moveToElement(img3).perform();
 
         //7. Confirm:
-        //a. “name: user3” is displayed b. “view profile” is displayed
+        //a. “name: user3” is displayed
+        Assert.assertTrue(user3.isDisplayed());
+
+
     }
 
 }
