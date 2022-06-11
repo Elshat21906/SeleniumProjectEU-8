@@ -29,10 +29,17 @@ public class ActionsPractices {
         actions.moveToElement(cydeoLink).perform();
 
         //5- Scroll back up to “Home” link using PageUP button
-        actions.sendKeys(Keys.PAGE_UP);
+        actions.sendKeys(Keys.PAGE_UP,Keys.PAGE_UP);
         //Driver.getDriver().quit();
     }
+    @Test
+    public void test2(){
+        Driver.getDriver().get("https://practice.cydeo.com/");
+
+    }
 }
+
+
 //TC #4: Scroll practice
 //1- Open a Chrome browser
 //2- Go to: https://practice.cydeo.com/
