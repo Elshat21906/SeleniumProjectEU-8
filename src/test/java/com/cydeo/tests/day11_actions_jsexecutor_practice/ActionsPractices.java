@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 public class ActionsPractices {
 
     @Test
-    public void task4_and_5_test(){
+    public void task4_and_5_test() {
 
         //TC #4: Scroll practice
         //1- Open a Chrome browser
@@ -29,16 +29,30 @@ public class ActionsPractices {
         actions.moveToElement(cydeoLink).perform();
 
         //5- Scroll back up to “Home” link using PageUP button
-        actions.sendKeys(Keys.PAGE_UP,Keys.PAGE_UP);
+        actions.sendKeys(Keys.PAGE_UP, Keys.PAGE_UP);
         //Driver.getDriver().quit();
+        Driver.closeDriver();
     }
-    @Test
-    public void test2(){
-        Driver.getDriver().get("https://practice.cydeo.com/");
 
+    @Test
+    public void test2() {
+        Driver.getDriver().get("https://practice.cydeo.com/");
+        Driver.closeDriver();
+
+    }
+
+    @Test
+    public void test3() {
+        Driver.getDriver().get("https://practice.cydeo.com/");
+        Driver.closeDriver();
+    }
+
+    @Test
+    public void test4() {
+        Driver.getDriver().get("https://practice.cydeo.com/");
+        Driver.closeDriver();
     }
 }
-
 
 //TC #4: Scroll practice
 //1- Open a Chrome browser
