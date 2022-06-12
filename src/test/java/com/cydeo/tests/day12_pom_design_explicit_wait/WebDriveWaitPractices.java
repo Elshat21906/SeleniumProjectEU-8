@@ -36,8 +36,11 @@ public class WebDriveWaitPractices {
     public void dynamic_load_1_test(){
         //1. Go to https://practice.cydeo.com/dynamic_loading/1
         Driver.getDriver().get("https://practice.cydeo.com/dynamic_loading/1");
+        DynamicLoad1Page dynamicLoad1Page = new DynamicLoad1Page();
 
         //2. Click to start
+        dynamicLoad1Page.startButton.click();
+
         //3. Wait until loading bar disappears
         //4. Assert username inputbox is displayed
         //5. Enter username: tomsmith
