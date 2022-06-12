@@ -60,6 +60,7 @@ public class POMPractices {
         //4- Verify title expected error is displayed:
         //Expected: Sorry, Wrong Email or Password
         Assert.assertTrue(libraryLoginPage.wrongEmailOrPasswordErrorMessage.isDisplayed());
+        Driver.closeDriver();
     }
 }
 //TC #1: Required field error message test
