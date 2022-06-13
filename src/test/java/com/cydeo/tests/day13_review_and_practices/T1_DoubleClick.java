@@ -28,6 +28,7 @@ public class T1_DoubleClick {
 
         String actualStyleAttributeValue = doubleClickPage.textTODoubleClick.getAttribute("style");
         String expectedInStyleAttribute = "red";
+
         Assert.assertTrue(actualStyleAttributeValue.contains(expectedInStyleAttribute));
 
 
