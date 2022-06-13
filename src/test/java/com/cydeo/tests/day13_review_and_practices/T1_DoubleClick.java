@@ -3,6 +3,7 @@ package com.cydeo.tests.day13_review_and_practices;
 import com.cydeo.pages.DoubleClickPage;
 import com.cydeo.utilities.Driver;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class T1_DoubleClick {
@@ -12,7 +13,7 @@ public class T1_DoubleClick {
         //TC #1: Double Click Test
         // 1. Goto
         //https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_ev_ondblcli
-        Driver.getDriver().get("https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_ev_ondblcli");
+        Driver.getDriver().get("https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_ev_ondblclick2");
         //ck2
         //2. Switch to iframe.
         Driver.getDriver().switchTo().frame("iframeResult");
@@ -23,6 +24,11 @@ public class T1_DoubleClick {
         actions.doubleClick(doubleClickPage.textTODoubleClick).perform();
 
         //4. Assert:Text’s“style” attribute value contains“red”.
+        System.out.println("doubleClickPage.textTODoubleClick.getAttribute(\"style\") = " + doubleClickPage.textTODoubleClick.getAttribute("style"));
+
+        String actualStyleAttributeValue = doubleClickPage.textTODoubleClick.getAttribute("style");
+        String expectedInStyleAttribute = "red";
+        Assert.assertTrue(actualStyleAttributeValue.contains(expectedInStyleAttribute));
 
 
         //NOTE: FOLLOW POM
