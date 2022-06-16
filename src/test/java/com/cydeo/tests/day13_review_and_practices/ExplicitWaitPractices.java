@@ -32,7 +32,7 @@ public class ExplicitWaitPractices {
         Driver.getDriver().manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(),10);
         wait.until(ExpectedConditions.invisibilityOf(dynamicControlsPage.loadingBar));
-        Driver.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
 
         //5- Verify:
         //a. Checkbox is not displayed
