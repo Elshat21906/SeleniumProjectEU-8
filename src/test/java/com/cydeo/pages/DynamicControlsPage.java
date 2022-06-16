@@ -15,7 +15,7 @@ public class DynamicControlsPage {
     @FindBy(css = "form#checkbox-example>button") // id
     public WebElement removeButton;
 
-    @FindBy(css = "div#=loading")
+    @FindBy(css = "div#loading")
     public WebElement loadingBar;
 
     //@FindBy(css = "input[label='blah']")
