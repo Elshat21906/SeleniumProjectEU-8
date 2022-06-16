@@ -31,10 +31,12 @@ public class ExplicitWaitPractices {
 
         //5- Verify:
         //a. Checkbox is not displayed
-        Assert.assertTrue(dynamicControlsPage.checkBox.isDisplayed());
 
-        //assertFalse method will pass the test if the boolean value returned is: false
-        Assert.assertFalse(dynamicControlsPage.checkBox.isDisplayed());
+            Assert.assertTrue(dynamicControlsPage.checkBox.isDisplayed());
+
+            //assertFalse method will pass the test if the boolean value returned is: false
+            Assert.assertFalse(dynamicControlsPage.checkBox.isDisplayed());
+
 
         //b. “It’s gone!” message is displayed.
 
