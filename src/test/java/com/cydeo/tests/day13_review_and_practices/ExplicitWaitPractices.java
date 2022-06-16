@@ -16,9 +16,10 @@ public class ExplicitWaitPractices {
 
     }
     //TC #2: Explicit wait practice
-    //1- Open a chrome browser
+    //1- Open a Chrome browser
     //2- Go to: https://practice.cydeo.com/dynamic_controls
     //3- Click to “Remove” button
+
     //4- Wait until “loading bar disappears”
     //5- Verify:
     //a. Checkbox is not displayed
